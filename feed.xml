@@ -1,30 +1,321 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:10 %}
+    <title>OpenNIC</title>
+    <description>An organization of hobbyists who run an alternative DNS network, also provides access to domains not administered by ICANN.
+</description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 21 Feb 2017 21:23:21 -0600</pubDate>
+    <lastBuildDate>Tue, 21 Feb 2017 21:23:21 -0600</lastBuildDate>
+    <generator>Jekyll v3.4.0</generator>
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
-        {% for tag in post.tags %}
-        <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
-        {% for cat in post.categories %}
-        <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
+        <title>Recent T2 Updates</title>
+        <description>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col s12&quot;&gt;
+    &lt;div class=&quot;card-panel red&quot;&gt;
+      &lt;span class=&quot;white-text&quot;&gt;This post was copied from the legacy WordPress blog and likely does not contain up to date information. It has been retained for historical purposes.
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Please update your nameserver records to reflect the following T2 nameserver IP changes:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Old record                              New record
+==========                              ==========
+fvz-rec-pl-mz-01                        --&amp;gt; fvz-rec-pl-waw-01
+151.236.25.25                           --&amp;gt; 178.217.184.224
+2a03:f80:48:151:236:25:25:1             --&amp;gt; --No IPv6 (yet)--
+
+--------------------------------------------------------------------------------
+
+fvz-rec-es-md-01                        --&amp;gt; fvz-rec-es-mad-01
+192.71.213.213                          --&amp;gt; 5.134.117.239
+
+--------------------------------------------------------------------------------
+
+fvz-rec-ru-mow-01                       --&amp;gt; fvz-rec-ru-led-01
+213.183.57.57                           --&amp;gt; 94.242.57.130
+213.183.57.55                           --&amp;gt; 2a00:1838:20:1:216:3cff:fe3e:67ec
+2a02:150:7:213:183:57:55:0              --&amp;gt; 2a00:1838:20:1::b29c:ca35
+
+--------------------------------------------------------------------------------
+
+fvz-rec-at-vie-01                       --&amp;gt; fvz-rec-at-vie-01
+192.71.247.247                          --&amp;gt; 79.133.43.124
+2a03:f80:ed15:ca7:ea75:b12d:714:d234    --&amp;gt; fvz-rec-at-vie-02
+                                        --&amp;gt; 151.236.10.36
+                                        --&amp;gt; 2a03:f80:ed16:ca7:ea75:b12d:1b9:e6b9
+
+--------------------------------------------------------------------------------
+
+fvz-rec-nl-nh-01                        --&amp;gt; fvz-rec-nl-ams-01
+151.236.29.92                           --&amp;gt; 93.158.205.94
+2a00:1768:1005:1000:1000:1000:e621:4948 --&amp;gt; fvz-rec-nl-fl-01
+                                        --&amp;gt; 31.220.43.191
+                                        --&amp;gt; 2a01:6f0:ffff:42::53
+
+--------------------------------------------------------------------------------
+
+fvz-rec-hk-nt-01                        --&amp;gt; fvz-rec-hk-ztw-01
+151.236.20.236                          --&amp;gt; 103.53.199.71
+2a03:f80:852:151:236:20:236:1           --&amp;gt; --No IPv6 (yet)--
+
+--------------------------------------------------------------------------------
+
+fvz-rec-im-dgl-01                       --&amp;gt; fvz-rec-im-dgs-01
+192.71.211.211                          --&amp;gt; 37.235.55.46
+2a03:f80:44:192:71:211:211:1            --&amp;gt; --No IPv6 (yet)--
+
+--------------------------------------------------------------------------------
+
+fvz-rec-il-ta-01                        --&amp;gt; fvz-rec-il-tlv-01
+193.182.144.144                         --&amp;gt; 193.182.144.83
+2a03:f80:972:193:182:144:144:1          --&amp;gt; 2a03:f80:972:193:182:144:83:1
+
+--------------------------------------------------------------------------------
+
+fvz-rec-be-vwv                          --&amp;gt; fvz-rec-be-okp-01
+192.71.249.249                          --&amp;gt; 192.71.249.83
+                                        --&amp;gt; 2a03:f80:32:192:71:249:83:1
+
+--------------------------------------------------------------------------------
+
+fvz-rec-ch-zu-01                        --&amp;gt; fvz-rec-ch-zrh-01
+192.121.170.170                         --&amp;gt; 192.121.170.22
+2a02:418:6050:ed15:ed15:ed15:e385:e640  --&amp;gt; 2a02:418:6050:ca7:ea75:b12d:58:c784
+
+--------------------------------------------------------------------------------
+
+fvz-rec-li-ba-01                        --&amp;gt; fvz-rec-li-baz-01
+88.82.109.9                             --&amp;gt; 88.82.109.119
+2a02:380:4002:ed15:ed15:ed15:3170:4abe  --&amp;gt; 2a02:380:4002:ca7:ea75:b12d:4:4c52
+
+--------------------------------------------------------------------------------
+
+fvz-rec-is-hf-01                        --&amp;gt; fvz-rec-is-haf-01
+192.71.218.218                          --&amp;gt; 151.236.24.245
+2a03:f80:354:ca7:ea75:b12d:31:31        --&amp;gt; 2a03:f80:354:ca7:ea75:b12d:41:28b5
+
+--------------------------------------------------------------------------------
+
+fvz-rec-hu-bu-01                        --&amp;gt; fvz-rec-hu-bud-01
+79.120.211.147                          --&amp;gt; 185.112.156.159
+                                        --&amp;gt; 2a02:6080::1:b709:e0e3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Tue, 29 Sep 2015 00:00:00 -0500</pubDate>
+        <link>/2015/09/29/Recent-T2-Updates.html</link>
+        <guid isPermaLink="true">/2015/09/29/Recent-T2-Updates.html</guid>
+        
+        
+        <category>News</category>
+        
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>OpenNIC now world’s leading DNS alternative</title>
+        <description>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col s12&quot;&gt;
+    &lt;div class=&quot;card-panel red&quot;&gt;
+      &lt;span class=&quot;white-text&quot;&gt;This post was copied from the legacy WordPress blog and likely does not contain up to date information. It has been retained for historical purposes.
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FOR IMMEDIATE RELEASE:
+
+OpenNIC to become world's leading DNS alternative after
+Cisco/OpenDNS deal
+
+June 30, 2015 - With the Cisco acquisition of OpenDNS, OpenNIC is now
+positioned as the only viable, open and democratic DNS alternative.
+
+OpenNIC fears this recent acquisition will adversely impact current
+OpenDNS users, giving Cisco large-scale access to the DNS records of
+OpenDNS subscribers. OpenNIC, founded in 2000, built its foundation based upon the ideal of an open, transparent, and democratic DNS. We remain true to our roots, and welcome all OpenDNS users who value the privacy of their data.
+
+Contact:
+Julian De Marchi
+julian@opennicproject.org
+
+###
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Tue, 30 Jun 2015 00:00:00 -0500</pubDate>
+        <link>/2015/06/30/OpenNIC-Now-Worlds-Leading-DNS-Alternative.html</link>
+        <guid isPermaLink="true">/2015/06/30/OpenNIC-Now-Worlds-Leading-DNS-Alternative.html</guid>
+        
+        
+        <category>News</category>
+        
+      </item>
+    
+      <item>
+        <title>New Tier2, Reykjavík, Iceland</title>
+        <description>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col s12&quot;&gt;
+    &lt;div class=&quot;card-panel red&quot;&gt;
+      &lt;span class=&quot;white-text&quot;&gt;This post was copied from the legacy WordPress blog and likely does not contain up to date information. It has been retained for historical purposes.
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;FOR IMMEDIATE RELEASE&lt;/p&gt;
+
+&lt;p&gt;OPENNIC PROJECT CONCERNED ABOUT ICANN’S MOTIVATION&lt;/p&gt;
+
+&lt;p&gt;Queensland, Australia, 6th July, 2012 – The OpenNIC Project, concerned about ICANN’s latest developments, is publicly denouncing ICANN for its recently released list of new domain types and claims ICANN will ruin the internet naming system and negatively affect the web as we know it today.&lt;/p&gt;
+
+&lt;p&gt;The OpenNIC Project, which provides free services to the public to access existing internet names as well as several new ones which users can register at no cost in an effort to promote free speech and fight censorship on the internet, is blasting the latest effort to come out of ICANN and criticises them for chasing the money rather than doing what is in internet users interests.&lt;/p&gt;
+
+&lt;p&gt;ICANNs latest list, which contains several new general top level domain types such as .blog and .shop, reveals several new types that are hardly general and some like .travellersinsurance are getting internet groups feeling cautious and very concerned.&lt;/p&gt;
+
+&lt;p&gt;Other types on the list, such as .ING and .FREE have already been in widespread use within the OpenNIC community for quite some time, and they say that ICANN has never come forward with an offer to help with these upcoming potential collisions.&lt;/p&gt;
+
+&lt;p&gt;The OpenNIC Project says that ICANN is not as motivated to protect internet users from commercial interests as other groups are, considering ICANN charge a whopping US$185,000 for the gTLD application fee alone and US$3,500 just to become a registrar to resell them.&lt;/p&gt;
+
+&lt;p&gt;“OpenNIC have facilitated the expansion of available TLDs in a controlled and fair manner,” says Brian Koontz of the OpenNIC Project. “ICANN’s goals are to simply enrich its coffers with exorbitant application fees”.&lt;/p&gt;
+
+&lt;p&gt;This is in stark contrast with the OpenNIC Project who have been offering alternative domain types for over 10 years, at no cost to applicants. This latest event from ICANN hints that they no longer care about what benefits all internet users and are instead allowing others to abuse the gTLD process for their own commercial interests.&lt;/p&gt;
+
+&lt;p&gt;About The OpenNIC Project:
+The OpenNIC Project is a user-owned, user-run democratically governed non-profit online community staffed by dedicated volunteers who run an alternative domain name system offered for free to the general public.&lt;/p&gt;
+
+&lt;p&gt;About ICANN:
+ICANN, the Internet Corporation for Assigned Names and Numbers, is a private non-profit organisation head-quartered in Los Angeles, California, United States and established in 1998 to oversee several Internet roles previously performed by the U.S. government.&lt;/p&gt;
+
+&lt;p&gt;Contact:
+Alex Hanselka
+alex@opennicproject.org
+http://www.opennicproject.org&lt;/p&gt;
+</description>
+        <pubDate>Fri, 06 Jul 2012 00:00:00 -0500</pubDate>
+        <link>/2012/07/06/Press-Release-OpenNIC-Project-Concerned.html</link>
+        <guid isPermaLink="true">/2012/07/06/Press-Release-OpenNIC-Project-Concerned.html</guid>
+        
+        
+        <category>News</category>
+        
+      </item>
+    
+      <item>
+        <title>New Tier2 Victoria, Australia</title>
+        <description>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col s12&quot;&gt;
+    &lt;div class=&quot;card-panel red&quot;&gt;
+      &lt;span class=&quot;white-text&quot;&gt;This post was copied from the legacy WordPress blog and likely does not contain up to date information. It has been retained for historical purposes.
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We have a new T2 in Victoria, Australia&lt;/p&gt;
+
+&lt;p&gt;It’s IP is 115.64.101.57&lt;/p&gt;
+
+&lt;p&gt;Very good to see another Tier2 in Victoria!&lt;/p&gt;
+</description>
+        <pubDate>Wed, 20 Jun 2012 00:00:00 -0500</pubDate>
+        <link>/2012/06/20/New-Tier2-Victoria-Australia.html</link>
+        <guid isPermaLink="true">/2012/06/20/New-Tier2-Victoria-Australia.html</guid>
+        
+        
+        <category>News</category>
+        
+      </item>
+    
+      <item>
+        <title>New Tier2 Victoria, Australia</title>
+        <description>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col s12&quot;&gt;
+    &lt;div class=&quot;card-panel red&quot;&gt;
+      &lt;span class=&quot;white-text&quot;&gt;This post was copied from the legacy WordPress blog and likely does not contain up to date information. It has been retained for historical purposes.
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We have a new T2 in Victoria, Australia&lt;/p&gt;
+
+&lt;p&gt;It’s IP is 111.67.16.202&lt;/p&gt;
+
+&lt;p&gt;Great to see Victoria once again have a Tier2 presence.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 18 Jun 2012 00:00:00 -0500</pubDate>
+        <link>/2012/06/18/New-Tier2-Victoria-Australia.html</link>
+        <guid isPermaLink="true">/2012/06/18/New-Tier2-Victoria-Australia.html</guid>
+        
+        
+        <category>News</category>
+        
+      </item>
+    
+      <item>
+        <title>New Tier2, Reykjavík, Iceland</title>
+        <description>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col s12&quot;&gt;
+    &lt;div class=&quot;card-panel red&quot;&gt;
+      &lt;span class=&quot;white-text&quot;&gt;This post was copied from the legacy WordPress blog and likely does not contain up to date information. It has been retained for historical purposes.
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We have a new T2 in Reykjavík, Iceland.&lt;/p&gt;
+
+&lt;p&gt;It’s IP is 93.95.226.146&lt;/p&gt;
+
+&lt;p&gt;This is agreat achievement for OpenNIC as this is our first Tier2 in Iceland.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 04 Jun 2012 00:00:00 -0500</pubDate>
+        <link>/2012/06/04/New-Tier-2-Reykjavik-Iceland.html</link>
+        <guid isPermaLink="true">/2012/06/04/New-Tier-2-Reykjavik-Iceland.html</guid>
+        
+        
+        <category>News</category>
+        
+      </item>
+    
+      <item>
+        <title>OpenNIC New Look</title>
+        <description>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col s12&quot;&gt;
+    &lt;div class=&quot;card-panel red&quot;&gt;
+      &lt;span class=&quot;white-text&quot;&gt;This post was copied from the legacy WordPress blog and likely does not contain up to date information. It has been retained for historical purposes.
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;For many years OpenNIC has dragged the joomla site along kicking and screaming. We all hated it, but for some reason lived with it. It’s weird how the world works in this way. Sounds like an all to familar song about ICANN. Well we are here to again break that tradition. Welcome to OpenNICs new look… We’ve had some colour changes, we’ve had a facelift. We are still the same OpenNIC, we just look different.&lt;/p&gt;
+
+&lt;p&gt;The one regular feedback always received about OpenNIC is that information is hard to find, the main site lacked substance. What you see today tries to solve these issues and many more. For instance, OpenNIC is now using central authentication for web services provided. Your OpenNIC username and password will grant you access to:&lt;/p&gt;
+
+&lt;p&gt;www.opennic.glue
+lists.opennicproject.org
+Soon the wiki will also follow. What if someone wanted to view this site without OpenNIC DNS? Just change the above urls to end with opennicproject.org. So to access this site it is www.opennicproject.org. So what other changes have occured?&lt;/p&gt;
+
+&lt;p&gt;Well we have a membership center. This is a site which allows you to create and control your OpenNIC membership. By visiting http://members.opennic.glue you can create an OpenNIC membership. Once created, you can then log into that site and update your membership details or your password.&lt;/p&gt;
+
+&lt;p&gt;This site will be growing alot over the coming months, so ensure you keep checking back!&lt;/p&gt;
+
+&lt;p&gt;As always thanks for supporting OpenNIC.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 29 May 2012 00:00:00 -0500</pubDate>
+        <link>/2012/05/29/OpenNIC-New-Look.html</link>
+        <guid isPermaLink="true">/2012/05/29/OpenNIC-New-Look.html</guid>
+        
+        
+        <category>News</category>
+        
+      </item>
+    
   </channel>
 </rss>
